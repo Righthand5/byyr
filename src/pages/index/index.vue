@@ -1,9 +1,12 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view>
-			<text class="title">{{title}}</text>
-		</view>
+		<image class="logo" src="/static/BYYR.png"></image>
+    <input class="account" v-if="true" type="text" placeholder="请输入账号" />
+    <input class="password" v-if="true" type="text" placeholder="请输入密码" />
+    <view class="buttonwrapper">
+      <button class="login button">登入</button>
+      <button class="register button">注册</button>
+    </view>
 	</view>
 </template>
 
@@ -23,27 +26,37 @@
 	}
 </script>
 
-<style>
+<style lang="scss" scoped>
 	.content {
+    height: 90vh;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		align-items:center;
+		justify-content:center;
 	}
 
 	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin: 200rpx auto 50rpx auto;
+    width: 400rpx;
+    height: 150rpx;
 	}
-
-	.text-area {
-		display: flex;
-		justify-content: center;
-	}
-
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
-	}
+	.account{
+    width: 50vw;
+    margin-top: 60rpx;
+    box-shadow: 1px 1px 1px #888888;
+  }
+  .password{
+    width: 50vw;
+    margin-top: 30rpx;
+    box-shadow: 1px 1px 1px #888888;
+  }
+  .buttonwrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 30rpx;
+    .login{
+      margin-right: 20rpx;
+    }
+  }
 </style>
